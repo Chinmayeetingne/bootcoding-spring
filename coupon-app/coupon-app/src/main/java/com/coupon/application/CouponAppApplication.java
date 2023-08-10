@@ -13,6 +13,7 @@ import java.util.List;
 public class CouponAppApplication implements ApplicationRunner {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(CouponAppApplication.class, args);
 	}
 	@Autowired
