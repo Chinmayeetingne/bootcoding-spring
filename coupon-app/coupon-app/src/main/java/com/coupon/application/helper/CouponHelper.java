@@ -7,6 +7,7 @@ import java.util.UUID;
 @Component
 public class CouponHelper {
     public String newCoupon(){
+
         return UUID.randomUUID().toString();
     }
 }
