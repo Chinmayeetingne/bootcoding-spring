@@ -21,13 +21,8 @@ public class CouponAppApplication implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		System.out.println("Hello World");
-
-		String newCoupon = couponService.getNewCoupon();
-		System.out.println(newCoupon);
-		List<String> couponsList = couponService.getNewCoupon(100);
-		for(String coupon: couponsList){
-			System.out.println(coupon);
-		}
+		String s = couponService.newCoupon();
+		System.out.println("New Coupon : " + s);
 	}
-}
+	}
+

@@ -7,29 +7,21 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Component
 public class CouponService {
-    //Dependency Inject
-    @Autowired
-    private CouponHelper couponHelper = null;
-
-    public String getNewCoupon(){
-        return couponHelper.newCoupon();
-
+    public String newCoupon(){
+        UUID uuid = UUID.randomUUID();
+        return uuid.toString();
     }
     public List<String> getNewCoupon(int quantity){
         List<String> coupons = new ArrayList<>();
         for(int i = 0; i < quantity; i++){
-            String newCoupon = couponHelper.newCoupon();
+            String newCoupon = newCoupon();
             coupons.add(newCoupon);
         }
         return coupons;
 
     }
-    // features
-    // - get new coupon
-    // isValidCoupon
-    // applyCoupon()
-    // viewCoupon()
 }
