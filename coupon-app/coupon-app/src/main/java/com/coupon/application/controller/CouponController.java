@@ -4,9 +4,7 @@ package com.coupon.application.controller;
 import com.coupon.application.service.Coupon;
 import com.coupon.application.service.CouponService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,6 +13,33 @@ import java.util.List;
 public class CouponController {
   @Autowired
     private CouponService couponService;
+  //1.Get all coupons
+  @GetMapping("all-coupons")
+  public List<String> getAllCoupons(){
+      int quantity = 10;
+      return couponService.getNewCoupon(quantity);
+  }
+
+    // 2. Get Coupon Details by Coupon Id using PathVariable
+    @GetMapping("coupon-id/{id}")
+    public String getCouponById(@PathVariable("id") String couponId){
+        return couponId + "-" + couponService.newCoupon();
+    }
+
+    // 3. Get Coupons with Filter (Query Parameter)
+    @GetMapping("search_coupon")
+    public String searchCoupon(
+            @RequestParam("valid") boolean isValid,
+            @RequestParam(value = "type", required = false) String couponType,
+            @RequestParam("category") String category){
+        return "Query Parameter valid = " + isValid
+                + " | Coupon Type = " + couponType
+                + " | Coupon Category = " + category;
+    }
+
+
+
+
     // HTTP Methods Get
     @GetMapping("getCoupon")
     public String newCoupon(){
