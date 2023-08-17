@@ -1,7 +1,7 @@
 package com.coupon.application.controller;
 
 
-import com.coupon.application.service.Coupon;
+import com.coupon.application.model.Coupon;
 import com.coupon.application.service.CouponService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -26,6 +26,20 @@ public class CouponController {
         return couponId + "-" + couponService.newCoupon();
     }
 
+    // 2.2 Get Coupon Details by Coupon Id using PathVariable
+    //@GetMapping("coupon-id/{id}")
+    //public Coupon getCouponObjectById(@PathVariable("id") String couponId){
+      //  Coupon coupon = couponService.generateNewCoupon();
+        //return coupon;
+    //}
+
+    @GetMapping("generate/new")
+    public Coupon generateNewCoupon(){
+        Coupon coupon = couponService.generateNewCoupon();
+        return coupon;
+    }
+
+
     // 3. Get Coupons with Filter (Query Parameter)
     @GetMapping("search_coupon")
     public String searchCoupon(
@@ -36,9 +50,6 @@ public class CouponController {
                 + " | Coupon Type = " + couponType
                 + " | Coupon Category = " + category;
     }
-
-
-
 
     // HTTP Methods Get
     @GetMapping("getCoupon")
