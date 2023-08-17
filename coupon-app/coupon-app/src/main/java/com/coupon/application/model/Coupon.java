@@ -1,4 +1,4 @@
-package com.coupon.application.service;
+package com.coupon.application.model;
 
 import lombok.Builder;
 import lombok.Data;
