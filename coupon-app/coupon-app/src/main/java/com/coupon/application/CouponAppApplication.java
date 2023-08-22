@@ -1,6 +1,7 @@
 package com.coupon.application;
 
 import com.coupon.application.service.CouponService;
+import com.coupon.application.service.UserService;
 import com.coupon.application.service.VoucherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -22,6 +23,9 @@ public class CouponAppApplication implements ApplicationRunner {
 
 	@Autowired
 	private VoucherService voucherService;
+
+	@Autowired
+	private UserService userService;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {

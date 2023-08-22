@@ -3,6 +3,7 @@ package com.coupon.application.controller;
 
 import com.coupon.application.model.Coupon;
 import com.coupon.application.service.CouponService;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,9 @@ public class CouponController {
   @Autowired
     private CouponService couponService;
   //1.Get all coupons
+
+
+
   @GetMapping("all-coupons")
   public List<String> getAllCoupons(){
       int quantity = 10;

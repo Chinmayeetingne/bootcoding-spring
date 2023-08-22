@@ -2,6 +2,7 @@ package com.coupon.application.service;
 
 
 import com.coupon.application.model.Coupon;
+import com.coupon.application.model.User;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -36,5 +37,31 @@ public class CouponService {
     }
 
 
+    public boolean save(User user) {
+        users.add(user);
+        return true;
+    }
+
+    public boolean save(List<User> users) {
+        for(User u: users){
+            save(u);
+        }
+        return true;
+    }
+
+    private List<User> users = new ArrayList<>();
+
+    public User getUser(int id) {
+        for(User u: users){
+            if(id == u.getId()){
+                return u;
+            }
+        }
+        return null;
+    }
+
+    public List<User> getUsers() {
+        return users;
+    }
 }
 
