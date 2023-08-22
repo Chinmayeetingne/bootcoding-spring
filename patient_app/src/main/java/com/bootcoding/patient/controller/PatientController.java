@@ -2,6 +2,7 @@ package com.bootcoding.patient.controller;
 
 
 import com.bootcoding.patient.service.PatientService;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,8 @@ import java.util.List;
 public class PatientController {
     @Autowired
     private PatientService patientService;
+
+
 
     @GetMapping("all-patients")
     public List<String> getAllPatients(){

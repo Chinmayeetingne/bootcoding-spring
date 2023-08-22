@@ -9,12 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class PatientAppApplication implements ApplicationRunner {
-
 	public static void main(String[] args) {
 		SpringApplication.run(PatientAppApplication.class, args);
 	}
-
-
 	@Autowired
 	private PatientService patientService;
 
