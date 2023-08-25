@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.List;
 
 @SpringBootApplication
-public class CouponAppApplication implements ApplicationRunner {
+public class CouponAppApplication  {
 
 	public static void main(String[] args) {
 
@@ -27,10 +27,10 @@ public class CouponAppApplication implements ApplicationRunner {
 	@Autowired
 	private UserService userService;
 
-	@Override
-	public void run(ApplicationArguments args) throws Exception {
-		String s = couponService.newCoupon();
-		System.out.println("New Coupon : " + s);
-	}
+//	@Override
+//	public void run(ApplicationArguments args) throws Exception {
+//		String s = couponService.newCoupon();
+//		System.out.println("New Coupon : " + s);
+//	}
 	}
 
