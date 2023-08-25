@@ -68,13 +68,15 @@ public class CouponService {
     public List<Coupon> generateNewCoupon(int value) {
         List<Coupon>list= new ArrayList<>();
         for (int i = 0; i < value; i++) {
-            Coupon coupon = Coupon.builder().title(GenerateCouponTitle.generateRandomCouponTitle())
+
+            Coupon coupon = Coupon.builder()
+                    .title(GenerateCouponTitle.generateRandomCouponTitle())
                     .description(GenerateDescription.getRandomCouponDescription())
                     .coupon_code(GenerateCoupon.generateRandomCouponCode())
                     .validity_date(GenerateDate.randomDate())
                     .type(GenerateType.generateRandomCouponType())
                     .discount((int) GenerateDiscount.generateRandomCouponDiscount())
-                    .category(GenerateCoupon.generateRandomCouponCode())
+                    .category(GenerateCategory.getRandomCouponCategory())
                     //.created_date(GenerateCreatedDate.generateRandomCouponCreatedDate())
                     .description(GenerateDescription.getRandomCouponDescription())
                     .isActive(GenerateIsActive.generateRandomCouponIsActive())

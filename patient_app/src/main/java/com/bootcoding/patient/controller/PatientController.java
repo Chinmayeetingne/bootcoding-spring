@@ -1,6 +1,7 @@
 package com.bootcoding.patient.controller;
 
 
+import com.bootcoding.patient.model.Patient;
 import com.bootcoding.patient.service.PatientService;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,12 @@ public class PatientController {
     @Autowired
     private PatientService patientService;
 
+
+    @PostMapping("register")
+    public String register(@RequestBody List<Patient> patient){
+        patientService.saveUser(patient);
+        return "SUCCESS";
+    }
 
 
     @GetMapping("all-patients")

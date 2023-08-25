@@ -9,11 +9,15 @@ public class GenerateCouponTitle {
         Random random = new Random();
         StringBuilder titleBuilder = new StringBuilder();
 
-        for (int i = 0; i < 3; i++) { // Generate a title with three words
+        for (int i = 0; i < 1; i++) { // Generate a title with three words
             int randomIndex = random.nextInt(words.length);
             titleBuilder.append(words[randomIndex]).append(" ");
         }
 
         return titleBuilder.toString().trim();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(generateRandomCouponTitle());
     }
 }

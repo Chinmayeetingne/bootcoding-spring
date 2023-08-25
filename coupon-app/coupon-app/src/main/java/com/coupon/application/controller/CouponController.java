@@ -23,6 +23,7 @@ public class CouponController {
 //  public List<String> getAllCoupons(){
 //      int quantity = 10;
 //      return couponService.getNewCoupon(quantity);
+
 //  }
 
     // 2. Get Coupon Details by Coupon Id using PathVariable

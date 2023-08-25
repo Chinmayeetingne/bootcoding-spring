@@ -1,5 +1,9 @@
 package com.bootcoding.patient.service;
 
+import com.bootcoding.patient.model.Patient;
+import com.bootcoding.patient.repository.PatientRepository;
+import org.apache.catalina.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -22,4 +26,15 @@ public class PatientService {
         return patients;
 
     }
+      @Autowired
+       private PatientRepository patientRepository;
+    public void saveDetails(Patient patient){
+        patientRepository.save(patient);
+    }
+
+     public void saveUser(List<Patient> patient) {
+        for(Patient data : patient){
+            patientRepository.save(data);
+        }
+         }
 }
