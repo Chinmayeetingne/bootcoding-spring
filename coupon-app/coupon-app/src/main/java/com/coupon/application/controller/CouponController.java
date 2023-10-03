@@ -17,8 +17,10 @@ public class CouponController {
   public List<Coupon> generateNewCoupon(@PathVariable int value ) {
     return couponService.generateNewCoupon(value);
   }
-  //1.Get all coupons
 
+
+//  1.Get all coupons
+//
 //  @GetMapping("all-coupons")
 //  public List<String> getAllCoupons(){
 //      int quantity = 10;

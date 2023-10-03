@@ -63,6 +63,8 @@ public class CouponService {
         return users;
     }
 
+
+
     @Autowired
     private CouponRepository couponRepository;
     public List<Coupon> generateNewCoupon(int value) {
@@ -77,7 +79,6 @@ public class CouponService {
                     .type(GenerateType.generateRandomCouponType())
                     .discount((int) GenerateDiscount.generateRandomCouponDiscount())
                     .category(GenerateCategory.getRandomCouponCategory())
-                    //.created_date(GenerateCreatedDate.generateRandomCouponCreatedDate())
                     .description(GenerateDescription.getRandomCouponDescription())
                     .isActive(GenerateIsActive.generateRandomCouponIsActive())
                     .status(StatusGenerator.getStatus()).build();
