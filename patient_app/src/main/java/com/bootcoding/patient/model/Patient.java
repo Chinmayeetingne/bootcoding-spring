@@ -1,24 +1,34 @@
 package com.bootcoding.patient.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
+
+import java.util.Date;
 
 
 @Data
 @Builder
+@Table(name = "patient")
 @Entity
 public class Patient {
-    @Column(name = "Patient_name")
-    private String name;
-
-    private int age;
-    private String disease;
-    private long phone;
     @Id
     @GeneratedValue
     private int id;
+
+    @Column(name = "Patient_Name")
+    private String name;
+
+    @Column(name = "Disease")
+    private String disease;
+
+    @Column(name = "Phone")
+    private int phone;
+
+    @Column(name = "Age")
+    private int age;
+
+    @Column(name = "Admission_Date")
+    private Date admissionDate;
+
 }
