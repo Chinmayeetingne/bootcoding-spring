@@ -15,7 +15,6 @@ import java.util.List;
 public class CouponAppApplication  {
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(CouponAppApplication.class, args);
 	}
 	@Autowired
